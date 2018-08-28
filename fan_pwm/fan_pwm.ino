@@ -1,5 +1,5 @@
-const int fan1_pin6 = 6;
-int fan_speed = 20;
+const int fan1_pin6 = 6; 
+int fan_Speed = 20;
 
 void setup() {
   // put your setup code here, to run once:
@@ -13,7 +13,9 @@ void loop() {
   // put your main code here, to run repeatedly:
   if(Serial.available())
   {
-    Serial.println("About to turn on fan" + fan1_pin6);
+    String fan_Print = "About to turn on fan ";
+    String print_All = fan_Print + fan_Speed;
+    Serial.println(print_All);
     analogWrite(fan1_pin6, 20);
   }
 }
